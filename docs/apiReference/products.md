@@ -10,15 +10,15 @@ GET list of all Products Available for the Client company of logged in client us
 
 | Attribute   | Description    |
 | :---------- | :--------------|
-| `id`     | Fetch resource |
-| `pricing`  | Update resource|
-| `fulfilment_lvl`| Update resource|
-| `active`  | Update resource|
-| `pdf_size`  | Update resource|
-| `client`  | Update resource|
-| `product`  | Update resource|
-| `product_type`  | Update resource|
-| `credits`  | Update resource|
+| `id`     | Authentication token |
+| `pricing`  | Price of Product|
+| `fulfilment_lvl`| ------- |
+| `active`  | Product is available or not (True/False)|
+| `pdf_size`  | ------- |
+| `client`  | Client ID |
+| `product`  | Product ID|
+| `product_type`  | Product type(Videocard, Vibo etc)|
+| `credits`  | Referral credits earned by user|
 
 - `message`
 - `status`
@@ -26,16 +26,13 @@ GET list of all Products Available for the Client company of logged in client us
 <br>
 <br>
 
-#### Demo:
+#### Bash Scripts:
 === "CURL Request"
 
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
+    ```json
+    curl --header "Content-Type: application/json" \
+    --request GET \
+    https://groot.homingos.com/api/orders/products
     ```
 
 === "Response"

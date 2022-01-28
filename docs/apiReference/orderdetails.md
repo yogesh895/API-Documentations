@@ -3,26 +3,23 @@
 <b>Endpoint:</b>&nbsp;&nbsp;&nbsp; [https://groot.homingos.com/api/orders/orderdetails](https://groot.homingos.com/api/orders/orderdetails)
 
 #### Use Case:
-Get authorisation token by inputting id and password
-
-#### Request Attributes:
-| Attribute   | Description    |
-| :---------- | :--------------|
-| `email`     | Fetch resource |
-| `password`  | Update resource|
+This API is used to get details of all the orders placed by our ID or through our referrals.
 
 #### Response Attributes:
 - `data`
 
 | Attribute   | Description    |
 | :---------- | :--------------|
-| `token`     | Fetch resource |
-| `client_name`  | Update resource|
-| `client_user_phone_number`| Update resource|
-| `client_username`  | Update resource|
-| `client_user_name`  | Update resource|
-| `client_user_email`  | Update resource|
-| `client_user_email`  | Update resource|
+| `id`     | Product ID|
+| `video_url` | URL of Video which was uploaded by customer |
+| `photo_url`| URL of Photo which was uploaded by customer|
+| `ref_id`  | Referrer ID|
+| `name`  | Name of user|
+| `phone_number`  |User's Phone Number|
+| `status`  | Order Status |
+| `created_on`  | Date and Time of Order|
+| `augmented`  |Boolean value to check image is augmented (True/False)|
+| `augmented_image`  | Augumented URL of Image|
 
 - `message`
 - `status`
@@ -30,16 +27,13 @@ Get authorisation token by inputting id and password
 <br>
 <br>
 
-#### Demo:
+#### Bash Scripts:
 === "CURL Request"
 
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
+    ```json
+    curl --header "Content-Type: application/json" \
+    --request GET \
+    https://groot.homingos.com/api/orders/orderdetails
     ```
 
 === "Response"
@@ -48,15 +42,18 @@ Get authorisation token by inputting id and password
     {
     "data":
     	{
-    	"token":"08ceae08e844dc9692d4108677f5210842baf8a0",
-    	"client_name":"917303736274",
-    	"client_user_phone_number":"7303736274",
-    	"client_username":"917303736274",
-    	"client_user_name":"Amit",
-    	"client_user_email":"xamit.94@gmail.com",
-    	"client_credits":199763
+    	"id":"b887137f-c989-4217-8595-8aaf50f720de",
+    	"video_url":"https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/base/51efe149-bf2b-41d3-85a8-bf02c019cdfa.mp4",
+    	"photo_url":"https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/base/ede4b6bc-a955-4ea7-9a68-90bf529c510e.jpg",
+    	"ref_id":"V023417",
+    	"name":"Yogesh Sangtani",
+    	"phone_number":"9649430924",
+    	"status":"PENDING",
+    	"created_on": "2022-01-28T10:03:52.443282Z",
+    	"augmented": false
+    	"augmented_image":"https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/print/b887137f-c989-4217-8595-8aaf50f720de.jpeg"
         },
-    "message":"Token generated successfully",
+    "message":"All Partner Videocards",
     "status":200,
     "error":false
     }

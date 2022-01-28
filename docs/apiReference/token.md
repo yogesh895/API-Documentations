@@ -3,26 +3,27 @@
 <b>Endpoint:</b>&nbsp;&nbsp;&nbsp; [https://groot.homingos.com/api/cuser/token](https://groot.homingos.com/api/cuser/token )
 
 #### Use Case:
-Get authorisation token by inputting id and password
+The Token API is used for user login, in which authentication is done with email and password. After logging in the user will be assigned with an authentication token which is necessary to
+use further services.
 
 #### Request Attributes:
 | Attribute   | Description    |
 | :---------- | :--------------|
-| `email`     | Fetch resource |
-| `password`  | Update resource|
+| `email`     | Valid E-mail ID for user authentication|
+| `password`  | Password for user authentication |
 
 #### Response Attributes:
 - `data`
 
 | Attribute   | Description    |
 | :---------- | :--------------|
-| `token`     | Fetch resource |
-| `client_name`  | Update resource|
-| `client_user_phone_number`| Update resource|
-| `client_username`  | Update resource|
-| `client_user_name`  | Update resource|
-| `client_user_email`  | Update resource|
-| `client_user_email`  | Update resource|
+| `token`     | Authentication token which is returned by this api after a sucessful login |
+| `client_name`  | Full name of user fetched from user profile|
+| `client_user_phone_number`| Phone Number fetched from user profile |
+| `client_username`  | User Name|
+| `client_user_name`  | User Name|
+| `client_user_email`  | Email fetched from user profile |
+| `client_credits`  |  It is the total count of referral credits done by user|
 
 - `message`
 - `status`
@@ -30,16 +31,14 @@ Get authorisation token by inputting id and password
 <br>
 <br>
 
-#### Demo:
+#### Bash Scripts:
 === "CURL Request"
 
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
+    ```json
+    curl --header "Content-Type: application/json" \
+  	--request POST \
+  	--data '{"email":"7303736274","password":"7303736274"}' \
+  	https://groot.homingos.com/api/cuser/token
     ```
 
 === "Response"
