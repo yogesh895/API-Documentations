@@ -467,8 +467,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -585,8 +585,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -608,7 +608,7 @@
 <p><b>HTTP Method:</b> &nbsp;&nbsp;&nbsp;<a class="md-button md-button--primary" href="#">POST</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <b>Endpoint:</b>&nbsp;&nbsp;&nbsp; <a href="https://groot.homingos.com/api/orders/partnervc">https://groot.homingos.com/api/orders/partnervc</a></p>
 <h4 id="use-case">Use Case:</h4>
-<p>Get authorisation token by inputting id and password</p>
+<p>This API is used to upload photo and video for flam card and to successfully place an order</p>
 <h4 id="request-attributes">Request Attributes:</h4>
 <table>
 <thead>
@@ -619,12 +619,56 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>email</code></td>
-<td align="left">Fetch resource</td>
+<td align="left"><code>product_id</code></td>
+<td align="left">Product ID which user ordered</td>
 </tr>
 <tr>
-<td align="left"><code>password</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>video_url</code></td>
+<td align="left">URL of Video which was uploaded by customer</td>
+</tr>
+<tr>
+<td align="left"><code>photo_url</code></td>
+<td align="left">URL of Photo which was uploaded by customer</td>
+</tr>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="left">Name of Customer</td>
+</tr>
+<tr>
+<td align="left"><code>phone_number</code></td>
+<td align="left">Phone Number of Customer</td>
+</tr>
+<tr>
+<td align="left"><code>country_code</code></td>
+<td align="left">Country Code of User's Phone Number</td>
+</tr>
+<tr>
+<td align="left"><code>sender_name</code></td>
+<td align="left">Name of the Person who selled/reffered the above customer</td>
+</tr>
+<tr>
+<td align="left"><code>sender_phone_number</code></td>
+<td align="left">Phone Number</td>
+</tr>
+<tr>
+<td align="left"><code>sender_country_code</code></td>
+<td align="left">Country Code</td>
+</tr>
+<tr>
+<td align="left"><code>upload_media_later</code></td>
+<td align="left">A boolean value to store whether a customer chose to upload media later(True/False)</td>
+</tr>
+<tr>
+<td align="left"><code>utm_medium</code></td>
+<td align="left">Order Mode(website/app/referral)</td>
+</tr>
+<tr>
+<td align="left"><code>utm_campaign</code></td>
+<td align="left">Marketing Campaign parameter to know that the order is achieved organically or through paid adds/campaigns</td>
+</tr>
+<tr>
+<td align="left"><code>utm_source</code></td>
+<td align="left">Source of FlamCard order(videoshop/instant etc)</td>
 </tr>
 </tbody>
 </table>
@@ -641,32 +685,20 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>token</code></td>
-<td align="left">Fetch resource</td>
+<td align="left"><code>order_id</code></td>
+<td align="left">The unique ID of the product ordered by user</td>
 </tr>
 <tr>
-<td align="left"><code>client_name</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>augmented_image</code></td>
+<td align="left">Compressed image for frontend preview</td>
 </tr>
 <tr>
-<td align="left"><code>client_user_phone_number</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>anv_id</code></td>
+<td align="left">Augumented Image ID</td>
 </tr>
 <tr>
-<td align="left"><code>client_username</code></td>
-<td align="left">Update resource</td>
-</tr>
-<tr>
-<td align="left"><code>client_user_name</code></td>
-<td align="left">Update resource</td>
-</tr>
-<tr>
-<td align="left"><code>client_user_email</code></td>
-<td align="left">Update resource</td>
-</tr>
-<tr>
-<td align="left"><code>client_user_email</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>is_fulfilled</code></td>
+<td align="left">Boolean Value to store whether the order process is completed(True/False)</td>
 </tr>
 </tbody>
 </table>
@@ -677,16 +709,26 @@
 <br>
 <br></li>
 </ul>
-<h4 id="demo">Demo:</h4>
+<h4 id="bash-scripts">Bash Scripts:</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CURL Request</label><label for="__tabbed_1_2">Response</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="err">curl</span><span class="w"> </span><span class="mi">--</span><span class="err">header</span><span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="mi">--</span><span class="err">reques</span><span class="kc">t</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="mi">--</span><span class="err">da</span><span class="kc">ta</span><span class="w"> </span><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;product_id&quot;</span><span class="p">:</span><span class="s2">&quot;c6db39a2-84bd-42be-80e8-fb62ff39a438&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;video_url&quot;</span><span class="p">:</span><span class="s2">&quot;https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/base/5cea2d6f-b331-458b-ac1b-e63a03ee9bda.mp4&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;photo_url&quot;</span><span class="p">:</span><span class="s2">&quot;https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/base/506fa937-7369-459c-943d-0776843b6e6f.jpg&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;YogeshSangtani&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;phone_number&quot;</span><span class="p">:</span><span class="s2">&quot;9649430924&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;country_code&quot;</span><span class="p">:</span><span class="s2">&quot;+91&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;sender_name&quot;</span><span class="p">:</span><span class="s2">&quot;917303736274&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;sender_phone_number&quot;</span><span class="p">:</span><span class="s2">&quot;7303736274&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;sender_country_code&quot;</span><span class="p">:</span><span class="s2">&quot;+91&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;upload_media_later&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;utm_medium&quot;</span><span class="p">:</span><span class="s2">&quot;website&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;utm_campaign&quot;</span><span class="p">:</span><span class="s2">&quot;organic&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;utm_source&quot;</span><span class="p">:</span><span class="s2">&quot;videoshop&quot;</span><span class="p">}</span><span class="err">&#39;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//groo</span><span class="kc">t</span><span class="err">.homi</span><span class="kc">n</span><span class="err">gos.com/api/orders/par</span><span class="kc">tner</span><span class="err">vc</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">

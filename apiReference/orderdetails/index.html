@@ -467,13 +467,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-attributes" class="md-nav__link">
-    Request Attributes:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#response-attributes" class="md-nav__link">
     Response Attributes:
   </a>
@@ -481,8 +474,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -571,13 +564,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-attributes" class="md-nav__link">
-    Request Attributes:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#response-attributes" class="md-nav__link">
     Response Attributes:
   </a>
@@ -585,8 +571,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -608,26 +594,7 @@
 <p><b>HTTP Method:</b> &nbsp;&nbsp;&nbsp;<a class="md-button md-button--primary" href="#">GET</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <b>Endpoint:</b>&nbsp;&nbsp;&nbsp; <a href="https://groot.homingos.com/api/orders/orderdetails">https://groot.homingos.com/api/orders/orderdetails</a></p>
 <h4 id="use-case">Use Case:</h4>
-<p>Get authorisation token by inputting id and password</p>
-<h4 id="request-attributes">Request Attributes:</h4>
-<table>
-<thead>
-<tr>
-<th align="left">Attribute</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>email</code></td>
-<td align="left">Fetch resource</td>
-</tr>
-<tr>
-<td align="left"><code>password</code></td>
-<td align="left">Update resource</td>
-</tr>
-</tbody>
-</table>
+<p>This API is used to get details of all the orders placed by our ID or through our referrals.</p>
 <h4 id="response-attributes">Response Attributes:</h4>
 <ul>
 <li><code>data</code></li>
@@ -641,32 +608,44 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>token</code></td>
-<td align="left">Fetch resource</td>
+<td align="left"><code>id</code></td>
+<td align="left">Product ID</td>
 </tr>
 <tr>
-<td align="left"><code>client_name</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>video_url</code></td>
+<td align="left">URL of Video which was uploaded by customer</td>
 </tr>
 <tr>
-<td align="left"><code>client_user_phone_number</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>photo_url</code></td>
+<td align="left">URL of Photo which was uploaded by customer</td>
 </tr>
 <tr>
-<td align="left"><code>client_username</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>ref_id</code></td>
+<td align="left">Referrer ID</td>
 </tr>
 <tr>
-<td align="left"><code>client_user_name</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>name</code></td>
+<td align="left">Name of user</td>
 </tr>
 <tr>
-<td align="left"><code>client_user_email</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>phone_number</code></td>
+<td align="left">User's Phone Number</td>
 </tr>
 <tr>
-<td align="left"><code>client_user_email</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>status</code></td>
+<td align="left">Order Status</td>
+</tr>
+<tr>
+<td align="left"><code>created_on</code></td>
+<td align="left">Date and Time of Order</td>
+</tr>
+<tr>
+<td align="left"><code>augmented</code></td>
+<td align="left">Boolean value to check image is augmented (True/False)</td>
+</tr>
+<tr>
+<td align="left"><code>augmented_image</code></td>
+<td align="left">Augumented URL of Image</td>
 </tr>
 </tbody>
 </table>
@@ -677,31 +656,31 @@
 <br>
 <br></li>
 </ul>
-<h4 id="demo">Demo:</h4>
+<h4 id="bash-scripts">Bash Scripts:</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CURL Request</label><label for="__tabbed_1_2">Response</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="err">curl</span><span class="w"> </span><span class="mi">--</span><span class="err">header</span><span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="mi">--</span><span class="err">reques</span><span class="kc">t</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//groo</span><span class="kc">t</span><span class="err">.homi</span><span class="kc">n</span><span class="err">gos.com/api/orders/orderde</span><span class="kc">ta</span><span class="err">ils</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;08ceae08e844dc9692d4108677f5210842baf8a0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;client_name&quot;</span><span class="p">:</span><span class="s2">&quot;917303736274&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;client_user_phone_number&quot;</span><span class="p">:</span><span class="s2">&quot;7303736274&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;client_username&quot;</span><span class="p">:</span><span class="s2">&quot;917303736274&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;client_user_name&quot;</span><span class="p">:</span><span class="s2">&quot;Amit&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;client_user_email&quot;</span><span class="p">:</span><span class="s2">&quot;xamit.94@gmail.com&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;client_credits&quot;</span><span class="p">:</span><span class="mi">199763</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;b887137f-c989-4217-8595-8aaf50f720de&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;video_url&quot;</span><span class="p">:</span><span class="s2">&quot;https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/base/51efe149-bf2b-41d3-85a8-bf02c019cdfa.mp4&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;photo_url&quot;</span><span class="p">:</span><span class="s2">&quot;https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/base/ede4b6bc-a955-4ea7-9a68-90bf529c510e.jpg&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="s2">&quot;V023417&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Yogesh Sangtani&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;phone_number&quot;</span><span class="p">:</span><span class="s2">&quot;9649430924&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;PENDING&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;created_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-01-28T10:03:52.443282Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;augmented&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;augmented_image&quot;</span><span class="p">:</span><span class="s2">&quot;https://homingos-magik.s3.ap-south-1.amazonaws.com/vibo/prod/print/b887137f-c989-4217-8595-8aaf50f720de.jpeg&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Token generated successfully&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;All Partner Videocards&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w"></span>
 <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="kc">false</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>

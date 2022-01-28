@@ -405,8 +405,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -571,8 +571,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -609,39 +609,39 @@
 <tbody>
 <tr>
 <td align="left"><code>id</code></td>
-<td align="left">Fetch resource</td>
+<td align="left">Authentication token</td>
 </tr>
 <tr>
 <td align="left"><code>pricing</code></td>
-<td align="left">Update resource</td>
+<td align="left">Price of Product</td>
 </tr>
 <tr>
 <td align="left"><code>fulfilment_lvl</code></td>
-<td align="left">Update resource</td>
+<td align="left">-------</td>
 </tr>
 <tr>
 <td align="left"><code>active</code></td>
-<td align="left">Update resource</td>
+<td align="left">Product is available or not (True/False)</td>
 </tr>
 <tr>
 <td align="left"><code>pdf_size</code></td>
-<td align="left">Update resource</td>
+<td align="left">-------</td>
 </tr>
 <tr>
 <td align="left"><code>client</code></td>
-<td align="left">Update resource</td>
+<td align="left">Client ID</td>
 </tr>
 <tr>
 <td align="left"><code>product</code></td>
-<td align="left">Update resource</td>
+<td align="left">Product ID</td>
 </tr>
 <tr>
 <td align="left"><code>product_type</code></td>
-<td align="left">Update resource</td>
+<td align="left">Product type(Videocard, Vibo etc)</td>
 </tr>
 <tr>
 <td align="left"><code>credits</code></td>
-<td align="left">Update resource</td>
+<td align="left">Referral credits earned by user</td>
 </tr>
 </tbody>
 </table>
@@ -652,16 +652,13 @@
 <br>
 <br></li>
 </ul>
-<h4 id="demo">Demo:</h4>
+<h4 id="bash-scripts">Bash Scripts:</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CURL Request</label><label for="__tabbed_1_2">Response</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="err">curl</span><span class="w"> </span><span class="mi">--</span><span class="err">header</span><span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="mi">--</span><span class="err">reques</span><span class="kc">t</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//groo</span><span class="kc">t</span><span class="err">.homi</span><span class="kc">n</span><span class="err">gos.com/api/orders/produc</span><span class="kc">ts</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">

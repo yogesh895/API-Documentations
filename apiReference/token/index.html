@@ -398,8 +398,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -585,8 +585,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    Demo:
+  <a href="#bash-scripts" class="md-nav__link">
+    Bash Scripts:
   </a>
   
 </li>
@@ -608,7 +608,8 @@
 <p><b>HTTP Method:</b> &nbsp;&nbsp;&nbsp;<a class="md-button md-button--primary" href="#">POST</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <b>Endpoint:</b>&nbsp;&nbsp;&nbsp; <a href="https://groot.homingos.com/api/cuser/token">https://groot.homingos.com/api/cuser/token</a></p>
 <h4 id="use-case">Use Case:</h4>
-<p>Get authorisation token by inputting id and password</p>
+<p>The Token API is used for user login, in which authentication is done with email and password. After logging in the user will be assigned with an authentication token which is necessary to
+use further services.</p>
 <h4 id="request-attributes">Request Attributes:</h4>
 <table>
 <thead>
@@ -620,11 +621,11 @@
 <tbody>
 <tr>
 <td align="left"><code>email</code></td>
-<td align="left">Fetch resource</td>
+<td align="left">Valid E-mail ID for user authentication</td>
 </tr>
 <tr>
 <td align="left"><code>password</code></td>
-<td align="left">Update resource</td>
+<td align="left">Password for user authentication</td>
 </tr>
 </tbody>
 </table>
@@ -642,31 +643,31 @@
 <tbody>
 <tr>
 <td align="left"><code>token</code></td>
-<td align="left">Fetch resource</td>
+<td align="left">Authentication token which is returned by this api after a sucessful login</td>
 </tr>
 <tr>
 <td align="left"><code>client_name</code></td>
-<td align="left">Update resource</td>
+<td align="left">Full name of user fetched from user profile</td>
 </tr>
 <tr>
 <td align="left"><code>client_user_phone_number</code></td>
-<td align="left">Update resource</td>
+<td align="left">Phone Number fetched from user profile</td>
 </tr>
 <tr>
 <td align="left"><code>client_username</code></td>
-<td align="left">Update resource</td>
+<td align="left">User Name</td>
 </tr>
 <tr>
 <td align="left"><code>client_user_name</code></td>
-<td align="left">Update resource</td>
+<td align="left">User Name</td>
 </tr>
 <tr>
 <td align="left"><code>client_user_email</code></td>
-<td align="left">Update resource</td>
+<td align="left">Email fetched from user profile</td>
 </tr>
 <tr>
-<td align="left"><code>client_user_email</code></td>
-<td align="left">Update resource</td>
+<td align="left"><code>client_credits</code></td>
+<td align="left">It is the total count of referral credits done by user</td>
 </tr>
 </tbody>
 </table>
@@ -677,16 +678,14 @@
 <br>
 <br></li>
 </ul>
-<h4 id="demo">Demo:</h4>
+<h4 id="bash-scripts">Bash Scripts:</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CURL Request</label><label for="__tabbed_1_2">Response</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="err">curl</span><span class="w"> </span><span class="mi">--</span><span class="err">header</span><span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="mi">--</span><span class="err">reques</span><span class="kc">t</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="mi">--</span><span class="err">da</span><span class="kc">ta</span><span class="w"> </span><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;7303736274&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;7303736274&quot;</span><span class="p">}</span><span class="err">&#39;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//groo</span><span class="kc">t</span><span class="err">.homi</span><span class="kc">n</span><span class="err">gos.com/api/cuser/</span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
