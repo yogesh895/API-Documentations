@@ -1,0 +1,25 @@
+.md-button.md-button--primary {
+ min-height: 23px;
+ min-width: 15px;
+ font-size: 11px;
+ line-height: 5px; 
+ border-radius: 12px;
+ pointer-events: none;
+ display: inline-block;
+ vertical-align: middle;
+ margin: 10px 0;
+}
+
+b{
+display: inline-block;
+vertical-align: middle;
+margin: 10px 0;
+}
+
+.md-sidebar--secondary {
+  display: none;
+}
+
+h1{
+font-family: 'Merriweather', sans-serif;
+}
